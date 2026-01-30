@@ -3,6 +3,7 @@ import { Card, Row, Col, Typography, Flex } from "antd";
 import BannerDes from "./BannerDes";
 
 const { Text } = Typography;
+
 const data = [
   {
     title: "Little Krazy",
@@ -26,28 +27,30 @@ const data = [
   },
 ];
 
-const ScrollCards = ({ inline ,slide }) => {
+const ScrollCards = ({ inline, slide }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
 
   return (
     <div
       style={{
-    padding: "auto",
-    background: "#2A3600",
-    overflowX: "hidden", 
-    
-  }}
-  className="p-2"
+        padding: "40px 16px",
+        background: "#2A3600",
+        overflow: "hidden",
+      }}
     >
       <Flex
-        vertical={!inline} // inline=false → column, inline=true → row
+        vertical={!inline}
         gap={32}
         align="center"
         justify="center"
       >
         {/* Banner */}
-        <div style={{ width: inline ? "400px" : "1000px" }}>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: inline ? 400 : 1000,
+          }}
+        >
           <BannerDes
             buttonText={slide.description}
             slideTittle={slide.title}
@@ -57,42 +60,53 @@ const ScrollCards = ({ inline ,slide }) => {
         {/* Cards */}
         <Row
           justify="center"
-          gutter={[32, 32]}
-          style={{ flexWrap: "nowrap" }}
+          gutter={[16, 24]}
+          wrap
+          style={{ width: "100%" }}
         >
           {data.map((item, index) => {
             const isHovered = hoveredIndex === index;
+
             return (
-              <Col key={index}>
+              <Col
+                key={index}
+                xs={24}
+                sm={12}
+                md={8}
+                lg={6}
+              >
                 <Card
                   style={{ backgroundColor: "#2A3600" }}
                   hoverable
+                  bordered={false}
                   cover={
                     <img
                       src={item.image}
                       alt={item.title}
+                      onMouseEnter={() => setHoveredIndex(index)}
+                      onMouseLeave={() => setHoveredIndex(null)}
                       style={{
-                        width: 260,
-                        height: 420,
+                        width: "100%",
+                        height: 380,
                         objectFit: "cover",
                         borderRadius: 20,
                         transition: "all 0.3s ease",
-                        transform: isHovered ? "scale(0.9)" : "scale(1)",
+                        transform: isHovered
+                          ? "scale(0.95)"
+                          : "scale(1)",
                         boxShadow: isHovered
                           ? "0 12px 30px rgba(0,0,0,0.6)"
                           : "0 4px 12px rgba(0,0,0,0.2)",
                       }}
-                      onMouseEnter={() => setHoveredIndex(index)}
-                      onMouseLeave={() => setHoveredIndex(null)}
                     />
                   }
-                  bordered={false}
                   bodyStyle={{ display: "none" }}
                 />
+
                 <Text
                   style={{
                     display: "block",
-                    marginTop: 16,
+                    marginTop: 12,
                     textAlign: "center",
                     color: "#fff",
                   }}
@@ -109,6 +123,3 @@ const ScrollCards = ({ inline ,slide }) => {
 };
 
 export default ScrollCards;
-
-
-

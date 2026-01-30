@@ -7,7 +7,7 @@ import bannerImage from "../assets/images/bannerImage.png";
 const sliderData = [
   {
     id: 1,
-    title: "Discover New Places",
+    title: "The New Era Of Luxury",
     description: "Explore the world with our curated guides and travel tips.",
     image: bannerImage,
     buttonText: "Get Started",
