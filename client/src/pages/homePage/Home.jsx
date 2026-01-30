@@ -30,7 +30,7 @@ const Home = () => {
   };
 
   return (
-    <div >
+    <div className="" >
       <NavHeader />
       {/* banner section work */}
       <section>
@@ -39,7 +39,11 @@ const Home = () => {
       {/* close */}
 
       {/* features Section work */}
-      <section style={{ backgroundColor: "#151D01", color: "white" }} className="middle-section">
+      <section style={{ 
+        backgroundColor: "#2A3600", 
+        // backgroundColor: "#151D01", 
+        
+        color: "white" }} className="middle-section">
 
         {/* // subsection for des and vedio */}
 

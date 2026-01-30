@@ -5,6 +5,7 @@ import zulu from "../assets/images/zulu.png";
 import ambiance from "../assets/images/ambiance.png";
 import khwaja from "../assets/images/khwaja.png";
 import horseBg from "../assets/images/horseBg.png";
+import Buttons from "./Buttons";
 
 
 const { Text } = Typography;
@@ -37,7 +38,7 @@ const ExperienceCards = () => {
     <div
       style={{
         width: "100%",
-        background: "radial-gradient(circle at top, #233013, #0b1207)",
+        backgroundColor: "#2A3600",
         padding: "80px 60px",
         boxSizing: "border-box",
       }}
@@ -53,7 +54,7 @@ const ExperienceCards = () => {
           <Col xs={24} md={12} key={index}>
             <div
               style={{
-                backgroundColor: "#1c2a12",
+                backgroundColor: "#2A3600",
                 borderRadius: "20px",
                 overflow: "hidden",
                 position: "relative",
@@ -92,27 +93,11 @@ const ExperienceCards = () => {
                     {item.title}
                   </Text>
 
-                  <span
-                    style={{
-                      backgroundColor: "#c9a86a",
-                      color: "#1c2a12",
-                      padding: "6px 14px",
-                      borderRadius: "14px",
-                      fontSize: "12px",
-                      letterSpacing: "1px",
-                    }}
-                  >
-                    {item.price}
-                  </span>
+                 
+                  <Buttons buttonText={item.price} arrowVisible={true} />
                 </div>
 
-                <ArrowRightOutlined
-                  style={{
-                    color: "#c9a86a",
-                    fontSize: "22px",
-                    cursor: "pointer",
-                  }}
-                />
+                
               </div>
             </div>
           </Col>

@@ -8,7 +8,8 @@ const BlowSection = () => {
     <div
       style={{
         width: "100%",
-        background: "radial-gradient(circle at top left, #233013, #0b1207)",
+               backgroundColor: "#2A3600",
+
         padding: "80px 60px",
         boxSizing: "border-box",
         color: "#ffffff",

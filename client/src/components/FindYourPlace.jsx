@@ -12,7 +12,7 @@ const FindYourPlace = () => {
       style={{
         width: "100%",
         minHeight: "100vh",
-        background: "radial-gradient(circle at left, #1f2d16, #0b1207)",
+        backgroundColor: "#2A3600",
         padding: "80px 60px",
         boxSizing: "border-box",
       }}
