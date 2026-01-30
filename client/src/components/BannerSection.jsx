@@ -10,7 +10,7 @@ const sliderData = [
     title: "The New Era Of Luxury",
     description: "Explore the world with our curated guides and travel tips.",
     image: bannerImage,
-    buttonText: "Get Started",
+    buttonText: "Book Reservation Now",
   },
   {
     id: 2,
@@ -49,7 +49,7 @@ const BannerSection = ({commonDescription , buttonText}) => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center">
             <div className="text-left px-8 md:px-16 max-w-xl text-white">
-              <BannerDes buttonText={slide.title} name={true} description={slide.description} slideTittle={slide.title} />
+              <BannerDes buttonText={slide.buttonText} name={true} description={slide.description} slideTittle={slide.title} />
              
             </div>
           </div>
