@@ -33,9 +33,12 @@ const ScrollCards = ({ inline ,slide }) => {
   return (
     <div
       style={{
-        padding: "auto",
-        background: "#2A3600",
-      }}
+    padding: "auto",
+    background: "#2A3600",
+    overflowX: "hidden", 
+    
+  }}
+  className="p-2"
     >
       <Flex
         vertical={!inline} // inline=false → column, inline=true → row
